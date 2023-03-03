@@ -170,7 +170,7 @@ const Home = () => {
   //fetch data
   const displaydata = () => {
     axios
-      .get(`http://localhost:7000/details?page=${currentPage}&limit=${perPage}`)
+      .get(`https://airlinebackend.vercel.app/details?page=${currentPage}&limit=${perPage}`)
       .then((response) => {
         console.log(response.data.data);
         setState(response.data.data)
@@ -189,7 +189,7 @@ const Home = () => {
   //delete data
   const handleDelete = (id) => {
     axios
-      .delete("http://localhost:7000/details",{data:{_id:id}})
+      .delete("https://airlinebackend.vercel.app/details",{data:{_id:id}})
       .then((response) => {
         console.log(response.data.data);
         setIsDeleted(!isDeleted)
