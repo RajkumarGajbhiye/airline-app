@@ -22,7 +22,7 @@ const Editdetails = () => {
   //get data
   useEffect(() => {
     axios
-      .get(`http://localhost:7000/details/${_id}`)
+      .get(`https://airlinebackend.vercel.app/details/${_id}`)
       .then((response) => {
         console.log(response.data.data);
         setState(response.data.data);
@@ -40,7 +40,7 @@ const Editdetails = () => {
   const populateData = (event) => {
     event.preventDefault();
     axios
-      .put("http://localhost:7000/details", state)
+      .put("https://airlinebackend.vercel.app/details", state)
       .then((response) => {
         console.log(response.data);
         setState(response.data.data);
